@@ -22,6 +22,6 @@
     "tweetnacl-util": "^0.15.0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.11"
+    "nodemon": "^1.19.0"
   }
 }

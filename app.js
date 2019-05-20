@@ -6,12 +6,16 @@ const fileUpload = require('express-fileupload');
 //Models
 require('./src/models/user');
 require('./src/models/pet');
+require('./src/models/petShop');
+require('./src/models/advertisement');
 
 const app = express();
 
 //Routes
 const AccountRoutes = require('./src/routes/account.routes');
 const PetRoutes = require('./src/routes/pet.routes');
+const PetShopRoutes = require('./src/routes/petShop.route');
+const AdvertisementRoutes = require('./src/routes/advertisement.route');
 
 //Middlewares
 app.use(bodyParser.json());
@@ -30,6 +34,8 @@ app.use((req, res, next) => {
 //Routes Implements
 app.use('/api', AccountRoutes);
 app.use('/api', PetRoutes);
+app.use('/api', PetShopRoutes);
+app.use('/api', AdvertisementRoutes);
 
 //Conection to database and run application
 const port = process.env.PORT || 8001;
@@ -39,5 +45,5 @@ const options = {
     useNewUrlParser: true,
 };
 
-app.listen(port);
+app.listen(port, console.log(port));
 mongoose.connect(uri, options);
