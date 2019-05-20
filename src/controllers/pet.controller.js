@@ -26,7 +26,7 @@ const Register = async(req,res) => {
     } catch (err) {
         return res.status(500).send({
             success: false,
-            messsage: err.message
+            message: err.message
         });
     };
 };
