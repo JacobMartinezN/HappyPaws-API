@@ -8,6 +8,7 @@ require('./src/models/user');
 require('./src/models/pet');
 require('./src/models/petShop');
 require('./src/models/advertisement');
+require('./src/models/task');
 
 const app = express();
 
@@ -16,6 +17,7 @@ const AccountRoutes = require('./src/routes/account.routes');
 const PetRoutes = require('./src/routes/pet.routes');
 const PetShopRoutes = require('./src/routes/petShop.route');
 const AdvertisementRoutes = require('./src/routes/advertisement.route');
+const TaskRoutes = require('./src/routes/task.routes');
 
 //Middlewares
 app.use(bodyParser.json());
@@ -36,6 +38,7 @@ app.use('/api', AccountRoutes);
 app.use('/api', PetRoutes);
 app.use('/api', PetShopRoutes);
 app.use('/api', AdvertisementRoutes);
+app.use('/api', TaskRoutes);
 
 //Conection to database and run application
 const port = process.env.PORT || 8001;
