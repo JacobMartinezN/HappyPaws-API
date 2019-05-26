@@ -51,7 +51,6 @@ const FindPetsByUser = async(req, res) => {
 
     try {
         const user = req.user;
-        console.log(user.session.id);
         const pets = await Pet.find({ owner_id: user.session.id });
 
         return res.status(200).send({
