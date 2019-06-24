@@ -29,7 +29,7 @@ const Authenticate = async(req,res) => {
     const { email, password } = req.body;
     try {
         const user = await User.findOne({email});
-        if(bcrypt.compareSync(password, user.password)) {
+        if(password == user.password) {
             const token = jwt.createSessionToken(user);
             return res.status(200).send({
                 success: true,
@@ -77,5 +77,6 @@ const Edit = async(req,res) => {
 module.exports = {
     Register,
     Authenticate,
-    Edit
+    Edit,
+    Logout
 };
