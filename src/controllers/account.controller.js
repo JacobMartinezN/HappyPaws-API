@@ -77,6 +77,5 @@ const Edit = async(req,res) => {
 module.exports = {
     Register,
     Authenticate,
-    Edit,
-    Logout
+    Edit
 };

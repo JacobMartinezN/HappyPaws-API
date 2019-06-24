@@ -7,4 +7,4 @@ api.post('/account/signup', AccountController.Register);
 api.post('/account/signin', AccountController.Authenticate);
 api.put('/account/:id',auth, AccountController.Edit);
 
-module.exports = api;   
+module.exports = api;
